@@ -1,6 +1,5 @@
 import {MetadataRoute} from "next";
-import {logoIcon} from "@/constants";
-
+import logoIcon from "@/assets/icons/logo-icon.svg"
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Piyola Market - Tez, Oson, Qulay va Arzon Xaridlar",

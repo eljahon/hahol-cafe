@@ -1,49 +1,70 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import {debounce} from "lodash";
-import {motion} from 'framer-motion';
-import {FC, useEffect, useState} from 'react';
+import { LogoKafe } from "@/assets/icons/logo-kafe";
+import { LogoShop } from "@/assets/icons/logo-shop";
+import { NotificationIcon } from "@/assets/icons/notification-icon";
+import { SearchIcon } from "@/assets/icons/search-icon";
+// import Image from "next/image";
+// import { debounce } from "lodash";
+// import { motion } from "framer-motion";
+import { FC } from "react";
+import { LocaleSwitcher } from "../locale-switcher";
 
-import {useFetchData} from "@/hooks";
-import {TProductData} from "@/types/product";
-import {Button, Input} from '@nextui-org/react';
-import {Link, LocaleSwitcher, usePathname, useRouter} from '@/components';
-import {
-  logoIcon,
-  heartIcon,
-  searchIcon,
-  heartFilledIcon,
-  overlayVariants,
-} from '@/constants';
+// import { useFetchData } from "@/hooks";
+// import { TProductData } from "@/types/product";
+// import { Button, Input } from "@nextui-org/react";
+// import { Link, LocaleSwitcher, usePathname, useRouter } from "@/components";
 
-import {Search} from "./search";
-import {TopContent} from './top-content';
+// import { Search } from "./search";
+// import { TopContent } from "./top-content";
 
 export const Header: FC = () => {
-  const router = useRouter();
-  const pathname = usePathname();
-  const [search, setSearch] = useState<string>('');
-  const [isFocused, setIsFocused] = useState<boolean>(false);
+  // const router = useRouter();
+  // const pathname = usePathname();
+  // const [search, setSearch] = useState<string>("");
+  // const [isFocused, setIsFocused] = useState<boolean>(false);
 
-  const {data, isLoading} = useFetchData<TProductData>({
-    url: "/products/public",
-    params: {search},
-    enabled: !!search
-  });
+  // const { data, isLoading } = useFetchData<TProductData>({
+  //   url: "/products/public",
+  //   params: { search },
+  //   enabled: !!search,
+  // });
 
-  useEffect(() => {
-    if (isFocused) {
-      document.documentElement.style.overflow = 'hidden';
-    } else {
-      document.documentElement.style.overflow = '';
-    }
-  }, [isFocused])
+  // useEffect(() => {
+  //   if (isFocused) {
+  //     document.documentElement.style.overflow = "hidden";
+  //   } else {
+  //     document.documentElement.style.overflow = "";
+  //   }
+  // }, [isFocused]);
 
   return (
     <>
-      <TopContent/>
-      <header className="sticky shadow pt-0 pb-1.5 sm:py-1.5 top-0 left-0 sm:mb-0 mb-3 w-full z-40 bg-white">
+      <header className="sticky top-0 left-0 right-0 w-full z-50 bg-white">
+        <div className="px-4 flex items-center justify-between py-[8px] shadow-headerShadow">
+          <div className="flex items-center gap-x-2">
+            <LogoKafe />
+            <LogoShop />
+          </div>
+
+          <div className="flex items-center gap-x-4">
+            <button>
+              <SearchIcon />
+            </button>
+            <button>
+              <NotificationIcon />
+            </button>
+            <LocaleSwitcher />
+          </div>
+        </div>
+      </header>
+    </>
+  );
+};
+
+/* 
+
+ <header className="sticky shadow pt-0 pb-1.5 sm:py-1.5 top-0 left-0 sm:mb-0 mb-3 w-full z-40 bg-white">
         <nav className="container flex flex-col lg:flex-row justify-between gap-x-3 items-center">
           <div className="flex justify-between w-full lg:w-max items-center">
             <Link
@@ -127,6 +148,5 @@ export const Header: FC = () => {
           </div>
         </nav>
       </header>
-    </>
-  );
-};
+
+*/

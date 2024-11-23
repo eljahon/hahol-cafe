@@ -1,8 +1,8 @@
-import {TProvider} from "@/types/payment";
-import {ReactNode} from "react";
-import {StaticImageData} from "next/image";
+import { TProvider } from "@/types/payment";
+import { ReactNode } from "react";
+import { StaticImageData } from "next/image";
 
-export type TLocale = "uz" | "ru" | "cyr";
+export type TLocale = "uz" | "ru" | "en";
 
 export interface IChildren {
   children: ReactNode;
@@ -15,7 +15,7 @@ export interface IParams {
 export interface ILocaleData {
   uz: string;
   ru: string;
-  cyr: string;
+  en: string;
 }
 
 export interface IFetchingProps {
@@ -45,32 +45,36 @@ export interface IData<T> {
 }
 
 export interface IPriceRange {
-  'price.gte': number;
-  'price.lte': number;
+  "price.gte": number;
+  "price.lte": number;
 }
 
-export type TOnChangePriceRange = (value: number | number[], name?: keyof IPriceRange) => void;
+export type TOnChangePriceRange = (
+  value: number | number[],
+  name?: keyof IPriceRange
+) => void;
 
 export type IStatus = "ACTIVE" | "INACTIVE";
 
 export type TProductType = "ALL" | "NEW" | "OLD";
 
 export interface ILink {
-  icon: StaticImageData,
+  icon: StaticImageData;
   text?: string;
   link: string;
 }
 
-export interface INavLink extends Omit<ILink, 'icon'> {
+export interface INavLink extends Omit<ILink, "icon"> {
   icon: {
     outline: StaticImageData;
-    filled: StaticImageData
-  }
+    filled: StaticImageData;
+  };
 }
 
 export interface ISelectData<T = string> {
   value: T;
   label: string;
+  icon: string;
 }
 
 export interface IImage {

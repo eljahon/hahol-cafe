@@ -1,12 +1,16 @@
-import {Button} from "@nextui-org/react";
-import {FC} from 'react';
-import Image from "next/image";
+// import { Button } from "@nextui-org/react";
+import { FC } from "react";
+// import Image from "next/image";
 
-import {paymentMethods, socialData} from "@/constants";
+// import { paymentMethods, socialData } from "@/constants";
 
 export const Footer: FC = () => {
-  return (
-    <footer className="hidden lg:block mt-5 text-white">
+  return <footer>Footer</footer>;
+};
+
+/* 
+
+ <footer className="hidden lg:block mt-5 text-white">
       <div className="bg-footer py-9">
         <div className="container grid grid-cols-3 gap-4">
           <div className="flex flex-col gap-3">
@@ -48,5 +52,5 @@ export const Footer: FC = () => {
         <p className="container text-center font-light text-sm">OOO “PIYOLA MARKET” | Barcha huquqlar himoyalangan</p>
       </div>
     </footer>
-  );
-};
+
+*/

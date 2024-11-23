@@ -1,3 +1,5 @@
 {
-  "greeting": "Энглиш"
+  "homePage": "Home Page",
+  "menuPage": "Menu Page",
+  "locationPage": "Location Page"
 }

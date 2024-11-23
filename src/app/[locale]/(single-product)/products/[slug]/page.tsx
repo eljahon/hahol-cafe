@@ -1,13 +1,13 @@
 "use server";
 
-import {Metadata, ResolvingMetadata} from "next";
+import { Metadata, ResolvingMetadata } from "next";
 
-import {ProductDetailsPage} from "@/views";
-import {TProviderData} from "@/types/payment";
-import {IData, IParams, TObject} from "@/types";
-import {IProduct, TProductData} from "@/types/product";
-import {getQueryClient, httpClient, queryFn} from "@/utils";
-import {dehydrate, HydrationBoundary} from "@tanstack/react-query";
+// import {ProductDetailsPage} from "@/views";
+import { TProviderData } from "@/types/payment";
+import { IData, IParams, TObject } from "@/types";
+import { IProduct, TProductData } from "@/types/product";
+import { getQueryClient, httpClient, queryFn } from "@/utils";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 
 interface ISingleProduct {
   params: IParams & {
@@ -17,10 +17,10 @@ interface ISingleProduct {
 }
 
 export async function generateMetadata(
-  {params}: ISingleProduct,
+  { params }: ISingleProduct,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const {data} = await httpClient.get<IData<IProduct>>(
+  const { data } = await httpClient.get<IData<IProduct>>(
     `/products/${params.slug}/info`
   );
   const previousImages = (await parent).openGraph?.images || [];
@@ -36,25 +36,33 @@ export async function generateMetadata(
       `https://piyolamerket.uz/${data?.data?.slug[params.locale]}`
     ),
     openGraph: {
-      type: 'website',
-      siteName: 'Piyola Market',
+      type: "website",
+      siteName: "Piyola Market",
       url: `https://piyolamerket.uz/${data?.data?.slug[params.locale]}`,
       title: `${data.data?.name[params.locale]}`,
-      description: `Mahsulot narxi ${data?.data?.price.toLocaleString('en')} so'm, oylik to'lov - ${(data.data?.price / 12).toLocaleString('en')} so'm`,
+      description: `Mahsulot narxi ${data?.data?.price.toLocaleString(
+        "en"
+      )} so'm, oylik to'lov - ${(data.data?.price / 12).toLocaleString(
+        "en"
+      )} so'm`,
       locale: params.locale,
       images: [
         ...previousImages,
-        ...(data?.data?.images?.map(({image}) => image) ?? []),
+        ...(data?.data?.images?.map(({ image }) => image) ?? []),
         data.data?.mainImage,
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: `${data.data?.name[params.locale]}`,
-      description: `Mahsulot narxi ${data?.data?.price.toLocaleString('en')} so'm, oylik to'lov - ${(data.data?.price / 12).toLocaleString('en')} so'm`,
+      description: `Mahsulot narxi ${data?.data?.price.toLocaleString(
+        "en"
+      )} so'm, oylik to'lov - ${(data.data?.price / 12).toLocaleString(
+        "en"
+      )} so'm`,
       images: [
         ...twitterImages,
-        ...(data?.data?.images?.map(({image}) => image) ?? []),
+        ...(data?.data?.images?.map(({ image }) => image) ?? []),
         data.data?.mainImage,
       ],
     },
@@ -65,12 +73,15 @@ export async function generateMetadata(
     robots: {
       index: true,
       follow: true,
-      'max-image-preview': 'large',
+      "max-image-preview": "large",
     },
   };
 }
 
-export default async function SingleProduct({params, searchParams}: Readonly<ISingleProduct>) {
+export default async function SingleProduct({
+  params,
+  searchParams,
+}: Readonly<ISingleProduct>) {
   const queryClient = getQueryClient();
 
   const brandParams = {
@@ -104,7 +115,7 @@ export default async function SingleProduct({params, searchParams}: Readonly<ISi
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <ProductDetailsPage/>
+      <div>Product Detail</div>
     </HydrationBoundary>
   );
 }

@@ -1,3 +1,5 @@
 {
-  "greeting": "English"
+  "homePage": "Bosh sahifa",
+  "menuPage": "Menyu sahifa",
+  "locationPage": "Lokatsiya sahifa"
 }
