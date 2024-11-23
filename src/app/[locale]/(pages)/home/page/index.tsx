@@ -9,7 +9,9 @@ export const HomePage = () => {
 
   return (
     <section>
-      <div>{/* <BannerSlider /> */}</div>
+      <div>
+        <BannerSlider />
+      </div>
       <div className="container">
         <div>{t("homePage")}</div>
         <p>

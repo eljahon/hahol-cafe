@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const bannerImages = [bannerImg1, bannerImg2, bannerImg3];
 
-const BannerSlider: FC = () => {
+export const BannerSlider: FC = () => {
   const settings = {
     className: "center",
     centerMode: true,
@@ -43,5 +43,3 @@ const BannerSlider: FC = () => {
     </div>
   );
 };
-
-export default BannerSlider;

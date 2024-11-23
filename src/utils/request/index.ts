@@ -63,7 +63,7 @@ const setupResponseInterceptors = () => {
   ];
 };
 
-httpClient.interceptors.request.use(setRequestHeaders);
-httpClient.interceptors.response.use(...setupResponseInterceptors());
+// httpClient.interceptors.request.use(setRequestHeaders);
+// httpClient.interceptors.response.use(...setupResponseInterceptors());
 
 export { httpClient };
