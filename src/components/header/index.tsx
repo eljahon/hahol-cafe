@@ -1,7 +1,6 @@
 "use client";
 
 import { LogoKafe } from "@/assets/icons/logo-kafe";
-import { LogoShop } from "@/assets/icons/logo-shop";
 import { NotificationIcon } from "@/assets/icons/notification-icon";
 import { SearchIcon } from "@/assets/icons/search-icon";
 // import Image from "next/image";
@@ -44,7 +43,6 @@ export const Header: FC = () => {
         <div className="px-4 flex items-center justify-between py-[8px] shadow-headerShadow">
           <div className="flex items-center gap-x-2">
             <LogoKafe />
-            <LogoShop />
           </div>
 
           <div className="flex items-center gap-x-4">

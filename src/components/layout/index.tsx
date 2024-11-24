@@ -23,7 +23,7 @@ export const BaseLayout: FC<IChildren> = async ({ children }) => {
         {/* <HydrationBoundary state={dehydrate(queryClient)}>
         <div>Main</div>
       </HydrationBoundary> */}
-        <main className="custom-height">{children}</main>
+        <main className="custom_height">{children}</main>
       </div>
       <NavigationButtons />
     </>

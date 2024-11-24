@@ -9,6 +9,7 @@ export const { Link, useRouter, usePathname } = createSharedPathnamesNavigation(
 export { Footer } from "./footer";
 export { Header } from "./header";
 export { NavigationButtons } from "./navigation";
+export { ProductCard } from "./product-card";
 // export { Slider } from "./slider";
 export { NoData } from "./no-data";
 export { BaseLayout } from "./layout";

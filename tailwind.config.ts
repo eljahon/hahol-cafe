@@ -12,7 +12,8 @@ module.exports = {
   ],
   theme: {
     screens: {
-      xsm: "420px",
+      xs: "400px",
+      xsm: "430px",
       sm: "640px",
       md: "768px",
       xlg: "860px",
@@ -34,15 +35,24 @@ module.exports = {
         Clr5204: "#520477",
         Clr4002: "#40024A",
         ClrA5A1: "#A5A1A7",
+        ClrEAE9: "#EAE9F7",
+        ClrDFDD: "#DFDDFF",
       },
 
       boxShadow: {
         headerShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.25)",
         bottomButtonBoxShadow: "0px -3px 4px 0px rgba(0, 0, 0, 0.25)",
+        bannerItemBoxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+        searchInputBoxShadow:
+          "-7px -7px 20px 0px rgba(255, 255, 255, 0.90) inset, 7px 7px 20px 0px rgba(135, 98, 98, 0.40) inset",
+        cardShadow: "0px 4.632px 4.632px 0px rgba(0, 0, 0, 0.25)",
       },
-
       borderRadius: {
         bottomButtonBorderRadius: "10px 10px 0px 0px",
+      },
+
+      gridTemplateColumns: {
+        "gridColumnsCardBox": "repeat(auto-fit, minmax(160px, 1fr))",
       },
     },
   },

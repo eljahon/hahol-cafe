@@ -16,18 +16,26 @@ export const BannerSlider: FC = () => {
     className: "center",
     centerMode: true,
     infinite: true,
-    // centerPadding: "60px",
+    centerPadding: "60px",
     slidesToShow: 1,
     speed: 500,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          centerPadding: "45px",
+        },
+      },
+    ],
   };
 
   return (
-    <div>
+    <div className="py-4">
       <Slider {...settings}>
         {bannerImages.map((image, idx) => (
           <div key={idx}>
             <div>
-              <div className="relative w-[360px] h-[121px]">
+              <div className="relative w-[270px] xsm:w-[280px] mx-auto h-[121px] shadow-bannerItemBoxShadow rounded-[20px]">
                 <Image
                   src={image}
                   alt={`Banner ${idx + 1}`}
