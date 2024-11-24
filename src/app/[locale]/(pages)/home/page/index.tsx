@@ -16,6 +16,7 @@ import {
   cardImg8,
 } from "@/constants";
 import { StaticImageData } from "next/image";
+import { ScrollShadow } from "@nextui-org/react";
 
 export interface IProductCardItemsType {
   id: number;
@@ -99,8 +100,9 @@ export const HomePage = () => {
   return (
     <section className="pb-[70px]">
       <Header />
-      <div>
-        <BannerSlider />
+      <ScrollShadow hideScrollBar orientation="vertical" className="h-[calc(100vh-100px)] w-full">
+        <div>
+          <BannerSlider />
       </div>
       <div className="container">
         <input
@@ -132,6 +134,7 @@ export const HomePage = () => {
           </div>
         </div>
       </div>
+      </ScrollShadow>
 
       <NavigationButtons />
     </section>

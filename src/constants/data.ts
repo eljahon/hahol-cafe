@@ -196,7 +196,18 @@ export const loadingMockData: number[] = [
 //   ALIF: alifLogoIcon,
 //   UZUM: uzumLogoIcon,
 // }
-
+export const radioData = [
+  {label: "small", value: "extraFree", price: 'extraFree'},
+  {label: "medium", value: "medium", price: '+1.500'},
+  {label: "large", value: "large", price: '+2.500'},
+  {label: "extraLarge", value: "extraLarge", price: '+3.500'},
+]
+export const checkboxData = [
+  {label: "original", value: "original", price: 'extraFree'},
+  {label: "onion", value: "onion", price: '+1.500'},
+  {label: "olives", value: "olives", price: '+2.500'},
+  {label: "souse", value: "souse", price: '+3.500'},
+]
 export const bannerData: StaticImageData[] = [
   bannerImg,
   bannerImg2,

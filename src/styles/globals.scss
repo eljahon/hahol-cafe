@@ -30,6 +30,7 @@ html {
 body {
   height: 100vh;
   overflow-x: hidden;
+  overflow: hidden;
 }
 
 button:disabled {
@@ -115,3 +116,8 @@ button:disabled {
     box-shadow: 0 0 0 0 rgba(106, 217, 51, 0);
   }
 }
+
+// [data-nextui="radio"] {
+//   border: 2px solid #ff5722; /* Default border rangini o'zgartirish */
+//   border-radius: 8px;       /* Chegarani yumaloqlash */
+// }

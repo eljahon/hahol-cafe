@@ -9,6 +9,8 @@ import {
   Checkbox,
   Radio,
   RadioGroup,
+  ScrollShadow,
+  cn
 } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -18,12 +20,13 @@ import { DetailStarIcon } from "@/assets/icons/detail-star-icon";
 import { PlusCalcIcon } from "@/assets/icons/plus-calc-icon";
 import { MinusCalcIcon } from "@/assets/icons/minus-calc-icon";
 import { AddBasketIcon } from "@/assets/icons/add-basket-icon";
+import { checkboxData, radioData } from "@/constants/data";
 
 export default function ProductDetailPage() {
   const t = useTranslations();
   const router = useRouter();
   const [count, setCount] = React.useState(1);
-
+  const [open, setOpen] = React.useState(true);
   const IncrementCalc = () => {
     setCount(count + 1);
   };
@@ -40,6 +43,7 @@ export default function ProductDetailPage() {
   return (
     <div className="bg-ClrEAE9">
       <div className="relative mx-auto max-w-md xsm:max-w-full">
+      <ScrollShadow hideScrollBar className="h-[calc(100vh)]">
         <div className="fixed left-0 right-0 top-0 z-30 flex items-center justify-between bg-gradient-to-b from-black to-transparent px-4 py-3">
           <button onClick={backToHome}>
             <ChevronLeftIcon />
@@ -49,6 +53,7 @@ export default function ProductDetailPage() {
           </button>
         </div>
         <SliderImage />
+        
         <div className="p-4">
           <Accordion defaultExpandedKeys={["1"]}>
             <AccordionItem
@@ -84,23 +89,13 @@ export default function ProductDetailPage() {
                     {t("required")}
                   </p>
                 </div>
-                <RadioGroup color="primary" defaultValue="radio">
-                  <div className="flex items-center justify-between">
-                    <Radio value="small">{t("small")}</Radio>
-                    <p className="text-[15px] text-Clr5959">{t("extraFree")}</p>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <Radio value="medium">{t("medium")}</Radio>
-                    <p className="text-[15px] text-Clr5959">+1.500</p>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <Radio value="large">{t("large")}</Radio>
-                    <p className="text-[15px] text-Clr5959">+2.500</p>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <Radio value="extra-large">{t("extraLarge")}</Radio>
-                    <p className="text-[15px] text-Clr5959">+3.500</p>
-                  </div>
+                <RadioGroup color="secondary" defaultValue="radio">
+                  {radioData.map((item, index) => (
+                    <div className="flex items-center justify-between" key={index}>
+                      <Radio classNames={{wrapper: cn("border-2 border-Clr4a23")}} value={item.value}>{t(item.label)}</Radio>
+                      <p className="text-[15px] text-Clr5959">{ index === 0 ? t("extraFree") : item.price}</p>
+                    </div>
+                  ))}
                 </RadioGroup>
               </div>
               <div className="border-t-2 border-white pt-3">
@@ -108,22 +103,24 @@ export default function ProductDetailPage() {
                   <h3 className="text-[18px] text-Clr4002">{t("exclude")}</h3>
                 </div>
                 <RadioGroup color="primary" defaultValue="radio">
-                  <div className="flex items-center justify-between">
-                    <Checkbox value="original">{t("orginal")}</Checkbox>
-                    <p className="text-[15px] text-Clr5959">{t("extraFree")}</p>
-                  </div>
-                  <div className="flex items-center justify-between">
+                  {checkboxData.map((item, index) => (
+                    <div className="flex items-center justify-between" key={index}>
+                      <Checkbox classNames={{wrapper: cn("border-2 border-Clr4a23")}} value={item.value}>{t(item.label)}</Checkbox>
+                      <p className="text-[15px] text-Clr5959">{index === 0 ? t("extraFree") : item.price}</p>
+                    </div>
+                  ))}
+                  {/* <div className="flex items-center justify-between">
                     <Checkbox value="onion">{t("onion")}</Checkbox>
                     <p className="text-[15px] text-Clr5959">+1.500</p>
-                  </div>
-                  <div className="flex items-center justify-between">
+                  </div> */}
+                  {/* <div className="flex items-center justify-between">
                     <Checkbox value="olives">{t("olives")}</Checkbox>
                     <p className="text-[15px] text-Clr5959">+2.500</p>
-                  </div>
-                  <div className="flex items-center justify-between">
+                  </div> */}
+                  {/* <div className="flex items-center justify-between">
                     <Checkbox value="souse">{t("souse")}</Checkbox>
                     <p className="text-[15px] text-Clr5959">+3.500</p>
-                  </div>
+                  </div> */}
                 </RadioGroup>
               </div>
             </AccordionItem>
@@ -142,8 +139,11 @@ export default function ProductDetailPage() {
           sapiente pariatur vitae, quibusdam deserunt aliquam! Soluta,
           molestiae. Similique, rerum!
         </p>
+        </ScrollShadow>
       </div>
-      <div className="rounded-calculateOrderTopRadius fixed bottom-0 w-full border-t bg-white py-4 shadow-bottomButtonBoxShadow">
+     {/* <BottomSheet onDismiss={() => setOpen(false)}
+        blocking={false} open={open} snapPoints={({ maxHeight }) => [maxHeight / 4, maxHeight * 0.6]} > */}
+     <div className="rounded-calculateOrderTopRadius fixed bottom-0 w-full border-t bg-white py-4 shadow-bottomButtonBoxShadow">
         <div className="mb-4 flex items-center justify-between px-5">
           <div className="flex items-center gap-x-4">
             <button onClick={IncrementCalc}>
@@ -174,6 +174,8 @@ export default function ProductDetailPage() {
           </Button>
         </div>
       </div>
+      {/* <BottomSheet /> */}
+     {/* </BottomSheet> */}
     </div>
   );
 }
