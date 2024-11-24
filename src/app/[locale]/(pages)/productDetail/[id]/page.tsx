@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { ChevronLeftIcon } from "@/assets/icons/chevron-left-icon";
 import { ShareIcon } from "@/assets/icons/share-icon";
 import {
@@ -10,15 +11,15 @@ import {
   RadioGroup,
 } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-import React from "react";
+import { useTranslations } from "next-intl";
 
-import { cardImg4 } from "@/constants";
 import { SliderImage } from "./_component/slider-image";
 import { DetailStarIcon } from "@/assets/icons/detail-star-icon";
 import { PlusCalcIcon } from "@/assets/icons/plus-calc-icon";
 import { MinusCalcIcon } from "@/assets/icons/minus-calc-icon";
 
 export default function ProductDetailPage() {
+  const t = useTranslations();
   const router = useRouter();
   const [count, setCount] = React.useState(1);
 
@@ -55,10 +56,10 @@ export default function ProductDetailPage() {
               startContent={
                 <div>
                   <h2 className="text-start text-[23px] font-medium text-Clr4002">
-                    Vegan Pizza
+                    {t("shawarma")}
                   </h2>
                   <p className="w-[300px] text-start font-light text-Clr5959">
-                    The crispy crust, tangy sauce,
+                    {t("detailDescription")}
                   </p>
                   <div className="mb-6 flex items-center gap-x-3">
                     <div className="flex items-center gap-x-1">
@@ -68,7 +69,7 @@ export default function ProductDetailPage() {
                     <span className="block h-4 w-[1px] bg-Clr5959"></span>
                     <div>
                       <span className="text-muted-foreground text-sm text-Clr5959">
-                        1K+ sold
+                        1K+ {t("sold")}
                       </span>
                     </div>
                   </div>
@@ -77,49 +78,49 @@ export default function ProductDetailPage() {
             >
               <div className="border-t-2 border-white py-4">
                 <div className="flex items-center justify-between pb-3">
-                  <h3 className="text-[18px] text-Clr4002">Size</h3>
+                  <h3 className="text-[18px] text-Clr4002">{t("size")}</h3>
                   <p className="text-[14px] font-medium text-ClrEF67">
-                    Required
+                    {t("required")}
                   </p>
                 </div>
                 <RadioGroup color="primary" defaultValue="radio">
                   <div className="flex items-center justify-between">
-                    <Radio value="small">Small</Radio>
-                    <p className="text-[15px] text-Clr5959">No extra free</p>
+                    <Radio value="small">{t("small")}</Radio>
+                    <p className="text-[15px] text-Clr5959">{t("extraFree")}</p>
                   </div>
                   <div className="flex items-center justify-between">
-                    <Radio value="medium">Medium</Radio>
+                    <Radio value="medium">{t("medium")}</Radio>
                     <p className="text-[15px] text-Clr5959">+1.500</p>
                   </div>
                   <div className="flex items-center justify-between">
-                    <Radio value="large">Large</Radio>
+                    <Radio value="large">{t("large")}</Radio>
                     <p className="text-[15px] text-Clr5959">+2.500</p>
                   </div>
                   <div className="flex items-center justify-between">
-                    <Radio value="extra-large">Extra Large</Radio>
+                    <Radio value="extra-large">{t("extraLarge")}</Radio>
                     <p className="text-[15px] text-Clr5959">+3.500</p>
                   </div>
                 </RadioGroup>
               </div>
               <div className="border-t-2 border-white pt-3">
                 <div className="pb-3">
-                  <h3 className="text-[18px] text-Clr4002">Exclude</h3>
+                  <h3 className="text-[18px] text-Clr4002">{t("exclude")}</h3>
                 </div>
                 <RadioGroup color="primary" defaultValue="radio">
                   <div className="flex items-center justify-between">
-                    <Checkbox value="original">Original</Checkbox>
-                    <p className="text-[15px] text-Clr5959">No extra free</p>
+                    <Checkbox value="original">{t("orginal")}</Checkbox>
+                    <p className="text-[15px] text-Clr5959">{t("extraFree")}</p>
                   </div>
                   <div className="flex items-center justify-between">
-                    <Checkbox value="onion">Onion</Checkbox>
+                    <Checkbox value="onion">{t("onion")}</Checkbox>
                     <p className="text-[15px] text-Clr5959">+1.500</p>
                   </div>
                   <div className="flex items-center justify-between">
-                    <Checkbox value="olives">Olives</Checkbox>
+                    <Checkbox value="olives">{t("olives")}</Checkbox>
                     <p className="text-[15px] text-Clr5959">+2.500</p>
                   </div>
                   <div className="flex items-center justify-between">
-                    <Checkbox value="souse">Souse</Checkbox>
+                    <Checkbox value="souse">{t("souse")}</Checkbox>
                     <p className="text-[15px] text-Clr5959">+3.500</p>
                   </div>
                 </RadioGroup>
@@ -154,11 +155,13 @@ export default function ProductDetailPage() {
           </div>
           <div>
             <div className="flex justify-between gap-x-[80px]">
-              <div className="text-Clr5959">Delivery</div>
+              <div className="text-Clr5959">{t("delivery")}</div>
               <div className="text-Clr5959">3,000</div>
             </div>
             <div className="flex justify-between gap-x-[80px]">
-              <div className="text-[20px] font-medium text-Clr5959">Total</div>
+              <div className="text-[20px] font-medium text-Clr5959">
+                {t("totla")}
+              </div>
               <div className="text-[20px] font-medium text-Clr5959">10,900</div>
             </div>
           </div>

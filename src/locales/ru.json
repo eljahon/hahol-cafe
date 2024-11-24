@@ -30,5 +30,21 @@
   "cairoHalal": "Каирский Халал",
   "noodleHalal": "Нудл Халал",
   "hotProduct": "Горячий продукт",
-  "onlyForYou": "Только для вас"
+  "onlyForYou": "Только для вас",
+  "detailDescription": "Подробное описание",
+  "sold": "Продано",
+  "size": "Размер",
+  "required": "Обязательно",
+  "small": "Маленький",
+  "medium": "Средний",
+  "large": "Большой",
+  "extraLarge": "Очень большой",
+  "extraFree": "бесплатно",
+  "exclude": "исключить",
+  "orginal": "Оригинальная",
+  "onion": "Лук",
+  "olives": "Оливки",
+  "souse": "Соус",
+  "delivery": "Доставка",
+  "totla": "Итого"
 }

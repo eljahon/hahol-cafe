@@ -29,5 +29,21 @@
   "cairoHalal": "Cairo Halal",
   "noodleHalal": "Noodle Halal",
   "hotProduct": "Qaynoq mahsulotlar",
-  "onlyForYou": "Faqat siz uchun"
+  "onlyForYou": "Faqat siz uchun",
+  "detailDescription": "Batafsil ma'lumotlar",
+  "sold": "Sotilgan",
+  "size": "O'lcham",
+  "required": "Manzil",
+  "small": "Kichkina",
+  "medium": "O'rta",
+  "large": "Katta",
+  "extraLarge": "Juda Katta",
+  "extraFree": "Bepul",
+  "exclude": "Istisno",
+  "orginal": "Orginal",
+  "onion": "Piyoz",
+  "olives": "Zaytun",
+  "souse": "Souse",
+  "delivery": "Yetkazish",
+  "totla": "Jami"
 }

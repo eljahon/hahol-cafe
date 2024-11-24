@@ -30,5 +30,21 @@
   "cairoHalal": "Cairo Halal",
   "noodleHalal": "Noodle Halal",
   "forYou": "Only for You",
-  "hotProduct": "Hot Product"
+  "hotProduct": "Hot Product",
+  "detailDescription": "Detail Description",
+  "sold": "Sold",
+  "size": "Size",
+  "required": "Required",
+  "small": "Small",
+  "medium": "Medium",
+  "large": "Large",
+  "extraLarge": "Extra Large",
+  "extraFree": "No extra Free",
+  "exclude": "Exclude",
+  "orginal": "Original",
+  "onion": "Onion",
+  "olives": "Olives",
+  "souse": "Souse",
+  "delivery": "Delivery",
+  "totla": "Total"
 }
