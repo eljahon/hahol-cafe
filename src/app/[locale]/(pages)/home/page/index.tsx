@@ -112,11 +112,23 @@ export const HomePage = () => {
         <CategorySlider />
       </div>
       <div className="container">
-        <h2>Hot Product</h2>
-        <div className="grid grid-cols-gridColumnsCardBox gap-2 xs:gap-4 justify-items-center">
-          {productCardItems.map((item) => (
-            <ProductCard key={item.id} {...item} />
-          ))}
+        <div>
+          <h2 className="text-Clr5204 font-semibold text-[20px] py-[20px]">
+            {t("hotProduct")}
+          </h2>
+          <div className="grid grid-cols-gridColumnsCardBox gap-2 xs:gap-4 justify-items-center">
+            {productCardItems.map((item) => (
+              <ProductCard key={item.id} {...item} />
+            ))}
+          </div>
+          <h2 className="text-Clr5204 font-semibold text-[20px] py-[20px] mt-4">
+           {t("onlyForYou")}
+          </h2>
+          <div className="grid grid-cols-gridColumnsCardBox gap-2 xs:gap-4 justify-items-center">
+            {productCardItems.map((item) => (
+              <ProductCard key={item.id} {...item} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

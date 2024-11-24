@@ -39,7 +39,7 @@ export const Header: FC = () => {
 
   return (
     <>
-      <header className="sticky top-0 left-0 right-0 w-full z-50 bg-white">
+      <header className="sticky top-0 left-0 right-0 w-full z-20 bg-white">
         <div className="px-4 flex items-center justify-between py-[8px] shadow-headerShadow">
           <div className="flex items-center gap-x-2">
             <LogoKafe />

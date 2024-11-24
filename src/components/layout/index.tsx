@@ -1,15 +1,14 @@
-"use server";
+"use client";
 
 import { FC } from "react";
 import { IChildren } from "@/types";
-import { TCategoryData } from "@/types/category";
-import { getQueryClient, queryFn } from "@/utils";
 import { Header, NavigationButtons } from "@/components";
+import { usePathname } from "next/navigation";
 // import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 
 export const BaseLayout: FC<IChildren> = async ({ children }) => {
-  const queryClient = getQueryClient();
   const params = { isParent: true, limit: "all" };
+  const pathname = usePathname();
 
   // await queryClient.prefetchQuery<TCategoryData>({
   //   queryKey: ["/categories/public", params],
@@ -25,7 +24,7 @@ export const BaseLayout: FC<IChildren> = async ({ children }) => {
       </HydrationBoundary> */}
         <main className="custom_height">{children}</main>
       </div>
-      <NavigationButtons />
+      <div>{pathname === "/productDetail/id" ? "" : <NavigationButtons />}</div>
     </>
   );
 };
