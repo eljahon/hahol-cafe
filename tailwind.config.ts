@@ -37,6 +37,8 @@ module.exports = {
         ClrA5A1: "#A5A1A7",
         ClrEAE9: "#EAE9F7",
         ClrDFDD: "#DFDDFF",
+        Clr5959: "#595959",
+        Clr4a23: "#4A235C",
       },
 
       boxShadow: {
@@ -49,6 +51,8 @@ module.exports = {
       },
       borderRadius: {
         bottomButtonBorderRadius: "10px 10px 0px 0px",
+        detaiImageBorderRadius: "0px 0px 20px 20px",
+        calculateOrderTopRadius: "20px 20px 0px 0px",
       },
 
       gridTemplateColumns: {

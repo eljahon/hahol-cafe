@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 
 import { BannerSlider } from "../component/slider";
 import { CategorySlider } from "../component";
-import { ProductCard } from "@/components";
+import { Header, NavigationButtons, ProductCard } from "@/components";
 import {
   cardImg1,
   cardImg2,
@@ -97,7 +97,8 @@ export const HomePage = () => {
   const t = useTranslations();
 
   return (
-    <section>
+    <section className="pb-[70px]">
+      <Header />
       <div>
         <BannerSlider />
       </div>
@@ -122,7 +123,7 @@ export const HomePage = () => {
             ))}
           </div>
           <h2 className="text-Clr5204 font-semibold text-[20px] py-[20px] mt-4">
-           {t("onlyForYou")}
+            {t("onlyForYou")}
           </h2>
           <div className="grid grid-cols-gridColumnsCardBox gap-2 xs:gap-4 justify-items-center">
             {productCardItems.map((item) => (
@@ -131,6 +132,8 @@ export const HomePage = () => {
           </div>
         </div>
       </div>
+
+      <NavigationButtons />
     </section>
   );
 };
