@@ -27,7 +27,7 @@ export const ProductCard: FC<IProductCardItemsType> = (props) => {
         src={img}
         alt={title}
       />
-      <h3 className="text-[16px] pl-[9px] py-[5px] border-b-[1px] border-white text-Clr4002 font-light">
+      <h3 className=" font-ubuntu text-[16px] pl-[9px] py-[5px] border-b-[1px] border-white text-Clr4002 font-light">
         {t(title)}
       </h3>
       <div className="px-[9px]">
@@ -51,7 +51,7 @@ export const ProductCard: FC<IProductCardItemsType> = (props) => {
         </div>
         <div className="flex items-center gap-x-1 mt-2">
           <CardLocationIcon />
-          <p className="text-Clr4002 font-light text-[12px] xs:text-[16px]">
+          <p className="text-Clr4002 font-light font-overpass text-[12px] xs:text-[16px]">
             {t(restaurantName)}
           </p>
         </div>

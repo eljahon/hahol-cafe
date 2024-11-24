@@ -105,7 +105,7 @@ export const HomePage = () => {
       <div className="container">
         <input
           placeholder={t("searchPlaceholder")}
-          className="outline-none shadow-searchInputBoxShadow bg-white text-Clr8584 placeholder:text-Clr8584 border-none w-[358px] xsm:w-[390px] flex justify-center mx-auto rounded-[30px] py-3 pl-6"
+          className="font-overpass outline-none shadow-searchInputBoxShadow bg-white text-Clr8584 placeholder:text-Clr8584 border-none w-[358px] xsm:w-[390px] flex justify-center mx-auto rounded-[30px] py-3 pl-6"
           type="text"
         />
       </div>
@@ -114,7 +114,7 @@ export const HomePage = () => {
       </div>
       <div className="container">
         <div>
-          <h2 className="text-Clr5204 font-semibold text-[20px] py-[20px]">
+          <h2 className="text-Clr5204 font-openSans font-semibold text-[20px] py-[20px]">
             {t("hotProduct")}
           </h2>
           <div className="grid grid-cols-gridColumnsCardBox gap-2 xs:gap-4 justify-items-center">
@@ -122,7 +122,7 @@ export const HomePage = () => {
               <ProductCard key={item.id} {...item} />
             ))}
           </div>
-          <h2 className="text-Clr5204 font-semibold text-[20px] py-[20px] mt-4">
+          <h2 className="text-Clr5204 font-openSans font-semibold text-[20px] py-[20px] mt-4">
             {t("onlyForYou")}
           </h2>
           <div className="grid grid-cols-gridColumnsCardBox gap-2 xs:gap-4 justify-items-center">

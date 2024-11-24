@@ -50,7 +50,7 @@ export default function ProductDetailPage() {
         </div>
         <SliderImage />
         <div className="p-4">
-          <Accordion>
+          <Accordion defaultExpandedKeys={["1"]}>
             <AccordionItem
               key="1"
               aria-label="Vegan Pizza"

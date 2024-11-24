@@ -23,6 +23,14 @@ module.exports = {
       "3xl": "1600px",
     },
     extend: {
+      fontFamily: {
+        ubuntu: ["Ubuntu", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        openSans: ["Open Sans", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        overpass: ["Overpass", "sans-serif"],
+      },
       colors: {
         primary: "#120A44",
         default: "#F9FAFB",

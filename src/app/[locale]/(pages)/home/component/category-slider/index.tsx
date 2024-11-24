@@ -105,7 +105,7 @@ export const CategorySlider: FC = () => {
                 className="object-contain"
                 priority={item.id === 0}
               />
-              <p>{t(item.title)}</p>
+              <p className="font-poppins font-normal ">{t(item.title)}</p>
             </div>
           </div>
         ))}
