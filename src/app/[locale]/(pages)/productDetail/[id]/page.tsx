@@ -17,6 +17,7 @@ import { SliderImage } from "./_component/slider-image";
 import { DetailStarIcon } from "@/assets/icons/detail-star-icon";
 import { PlusCalcIcon } from "@/assets/icons/plus-calc-icon";
 import { MinusCalcIcon } from "@/assets/icons/minus-calc-icon";
+import { AddBasketIcon } from "@/assets/icons/add-basket-icon";
 
 export default function ProductDetailPage() {
   const t = useTranslations();
@@ -167,8 +168,9 @@ export default function ProductDetailPage() {
           </div>
         </div>
         <div className="mx-auto w-full max-w-[300px]">
-          <Button className="w-full rounded-[30px] bg-Clr4a23 text-[20px] font-medium text-white">
-            Add to Cart
+          <Button className="w-full flex items-center gap-x-2 rounded-[30px] bg-Clr4a23 text-[20px] font-medium text-white">
+            <AddBasketIcon />
+            {t("addCard")}
           </Button>
         </div>
       </div>
