@@ -1,5 +1,6 @@
+
 import { notFound } from 'next/navigation';
-import { getRequestConfig } from 'next-intl/server';
+import { getRequestConfig} from 'next-intl/server';
 
 import { TLocale } from "@/types";
 import { locales } from "@/constants";

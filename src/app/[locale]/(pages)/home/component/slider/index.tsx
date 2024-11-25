@@ -8,10 +8,12 @@ import bannerImg2 from "@/assets/imgs/banner-img-2.png";
 import bannerImg3 from "@/assets/imgs/banner-img-3.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { useLocale } from "next-intl";
+import { Link } from "@/hooks/locale";
 const bannerImages = [bannerImg1, bannerImg2, bannerImg3];
 
 export const BannerSlider: FC = () => {
+  const locale = useLocale();
   const settings = {
     className: "center",
     centerMode: true,
@@ -33,6 +35,7 @@ export const BannerSlider: FC = () => {
     <div className="py-4">
       <Slider {...settings}>
         {bannerImages.map((image, idx) => (
+          <Link href={`/company/${idx}`} key={idx} locale={locale}>
           <div key={idx}>
             <div>
               <div className="relative w-[270px] xsm:w-[280px] mx-auto h-[121px] shadow-bannerItemBoxShadow rounded-[20px]">
@@ -46,6 +49,7 @@ export const BannerSlider: FC = () => {
               </div>
             </div>
           </div>
+          </Link>
         ))}
       </Slider>
     </div>

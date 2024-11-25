@@ -1,102 +1,22 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 import { BannerSlider } from "../component/slider";
 import { CategorySlider } from "../component";
 import { Header, NavigationButtons, ProductCard } from "@/components";
-import {
-  cardImg1,
-  cardImg2,
-  cardImg3,
-  cardImg4,
-  cardImg5,
-  cardImg6,
-  cardImg7,
-  cardImg8,
-} from "@/constants";
 import { StaticImageData } from "next/image";
 import { ScrollShadow } from "@nextui-org/react";
+import { Link } from "@/hooks/locale";
+import { productCardItems } from "@/constants/data";
 
-export interface IProductCardItemsType {
-  id: number;
-  img: string | StaticImageData;
-  title: string;
-  price: string;
-  salePrice: string;
-  restaurantName: string;
-}
 
-const productCardItems: IProductCardItemsType[] = [
-  {
-    id: 1,
-    img: cardImg1,
-    title: "biryani",
-    price: "15 000",
-    salePrice: "12 500",
-    restaurantName: "kebabHose",
-  },
-  {
-    id: 2,
-    img: cardImg2,
-    title: "shawarma",
-    price: "12 000",
-    salePrice: "9 500",
-    restaurantName: "asianHalal",
-  },
-  {
-    id: 3,
-    img: cardImg3,
-    title: "shashlik",
-    price: "8 000",
-    salePrice: "5 500",
-    restaurantName: "samarkandCafe",
-  },
-  {
-    id: 4,
-    img: cardImg4,
-    title: "mediterranean",
-    price: "18 000",
-    salePrice: "10 900",
-    restaurantName: "tashkentBurger",
-  },
-  {
-    id: 5,
-    img: cardImg5,
-    title: "chickenbiryani",
-    price: "12 5000",
-    salePrice: "10 500",
-    restaurantName: "cairoHalal",
-  },
-  {
-    id: 6,
-    img: cardImg6,
-    title: "satayset",
-    price: "15 000",
-    salePrice: "18 000",
-    restaurantName: "noodleHalal",
-  },
-  {
-    id: 7,
-    img: cardImg7,
-    title: "hummus",
-    price: "10 000",
-    salePrice: "7 500",
-    restaurantName: "cairoHalal",
-  },
-  {
-    id: 8,
-    img: cardImg8,
-    title: "hummusset",
-    price: "13 500",
-    salePrice: "18 000",
-    restaurantName: "asianHalal",
-  },
-];
+
+
 
 export const HomePage = () => {
   const t = useTranslations();
-
+  const locale = useLocale();
   return (
     <section className="pb-[70px]">
       <Header />
@@ -121,7 +41,9 @@ export const HomePage = () => {
           </h2>
           <div className="grid grid-cols-gridColumnsCardBox gap-2 xs:gap-4 justify-items-center">
             {productCardItems.map((item) => (
+              <Link href={`/productDetail/${item.title}`} key={item.id} locale={locale}>
               <ProductCard key={item.id} {...item} />
+              </Link>
             ))}
           </div>
           <h2 className="text-Clr5204 font-openSans font-semibold text-[20px] py-[20px] mt-4">

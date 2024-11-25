@@ -32,7 +32,7 @@ export const LocaleSwitcher: FC<ILocaleSwitcher> = ({ className }) => {
       size="sm"
       placeholder="Select"
       classNames={{
-        base: `w-[60px] bg-red ${className}`,
+        base: `w-[90px] bg-red ${className}`,
         popoverContent: "w-min -translate-x-[30px]",
         value: "text-sm font-medium",
         trigger: "bg-transparent shadow-none",
@@ -40,6 +40,11 @@ export const LocaleSwitcher: FC<ILocaleSwitcher> = ({ className }) => {
       aria-label="language-switch"
       onChange={({ target: { value } }) => handleChange(value as TLocale)}
       defaultSelectedKeys={[locale]}
+      startContent={<Avatar
+        alt={locale}
+        className="w-10 h-5 rounded-full"
+        src={`https://flagcdn.com/${locale === "en" ? "gb" : locale}.svg`}
+      />}
     >
       {localesData.map((item) => (
         <SelectItem

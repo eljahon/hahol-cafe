@@ -13,7 +13,7 @@ import {
   cn
 } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { SliderImage } from "./_component/slider-image";
 import { DetailStarIcon } from "@/assets/icons/detail-star-icon";
@@ -21,12 +21,14 @@ import { PlusCalcIcon } from "@/assets/icons/plus-calc-icon";
 import { MinusCalcIcon } from "@/assets/icons/minus-calc-icon";
 import { AddBasketIcon } from "@/assets/icons/add-basket-icon";
 import { checkboxData, radioData } from "@/constants/data";
+import { Link } from "@/hooks/locale";
 
 export default function ProductDetailPage() {
   const t = useTranslations();
   const router = useRouter();
   const [count, setCount] = React.useState(1);
   const [open, setOpen] = React.useState(true);
+  const locale = useLocale();
   const IncrementCalc = () => {
     setCount(count + 1);
   };
@@ -45,9 +47,9 @@ export default function ProductDetailPage() {
       <div className="relative mx-auto max-w-md xsm:max-w-full">
       <ScrollShadow hideScrollBar className="h-[calc(100vh)]">
         <div className="fixed left-0 right-0 top-0 z-30 flex items-center justify-between bg-gradient-to-b from-black to-transparent px-4 py-3">
-          <button onClick={backToHome}>
+          <Link href="/"  key={locale} locale={locale}>
             <ChevronLeftIcon />
-          </button>
+          </Link>
           <button>
             <ShareIcon />
           </button>

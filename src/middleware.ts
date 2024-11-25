@@ -4,7 +4,7 @@ import { locales } from '@/constants';
 
 export default createMiddleware({
   locales,
-  defaultLocale: 'uz',
+  defaultLocale: 'en',
   localeDetection: false,
   localePrefix: "as-needed",
 });

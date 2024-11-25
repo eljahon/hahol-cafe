@@ -2,11 +2,12 @@
 import React, { FC } from "react";
 import { IProductCardItemsType } from "@/app/[locale]/(pages)/home/page";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { StarIcon } from "@/assets/icons/star-icon";
 import { CardLocationIcon } from "@/assets/icons/card-location-icon";
 import { AddCartIcon } from "@/assets/icons/add-cart-icon";
 import { useRouter } from "next/navigation";
+import { Link } from "..";
 
 export const ProductCard: FC<IProductCardItemsType> = (props) => {
   const { img, title, price, salePrice, restaurantName } = props;
@@ -19,8 +20,8 @@ export const ProductCard: FC<IProductCardItemsType> = (props) => {
   };
   return (
     <div
-      onClick={handleProductDetail}
-      className="relative w-[159px] xs:w-full xs:h-[308px] h-[270px] rounded-[12px] bg-ClrEAE9 shadow-cardShadow"
+     
+     className="relative w-[159px] xs:w-full xs:h-[308px] h-[270px] rounded-[12px] bg-ClrEAE9 shadow-cardShadow"
     >
       <Image
         className="rounded-t-[12px] xs:w-full xs:h-[190px]"

@@ -4,29 +4,92 @@ import { StaticImageData } from "next/image";
 import bannerImg from "@/assets/imgs/banner-img.png";
 import bannerImg2 from "@/assets/imgs/banner-img-2.png";
 import bannerImg3 from "@/assets/imgs/banner-img-3.png";
+import {
+  cardImg1,
+  cardImg2,
+  cardImg3,
+  cardImg4,
+  cardImg5,
+  cardImg6,
+  cardImg7,
+  cardImg8,
+} from "@/constants";
+import CategoryImg1 from "@/assets/imgs/category-img.png";
+import CategoryImg2 from "@/assets/imgs/category-img-2.png";
+import CategoryImg3 from "@/assets/imgs/category-img-3.png";
+import CategoryImg4 from "@/assets/imgs/category-img-4.png";
+import CategoryImg5 from "@/assets/imgs/category-img-5.png";
+import CategoryImg6 from "@/assets/imgs/category-img-6.png";
+import CategoryImg7 from "@/assets/imgs/category-img-7.png";
+import CategoryImg8 from "@/assets/imgs/category-img-8.png";
+import CategoryImg9 from "@/assets/imgs/category-img-9.png";
+import CategoryImg10 from "@/assets/imgs/category-img-10.png";
+import CategoryImg11 from "@/assets/imgs/category-img-11.png";
+import CategoryImg12 from "@/assets/imgs/category-img-12.png";
 
+export const categoryImages = [
+  {
+    id: 1,
+    src: CategoryImg1,
+    title: "dessert",
+  },
+  {
+    id: 2,
+    src: CategoryImg2,
+    title: "arab",
+  },
+  {
+    id: 3,
+    src: CategoryImg3,
+    title: "turksih",
+  },
+  {
+    id: 4,
+    src: CategoryImg4,
+    title: "middleEast",
+  },
+  {
+    id: 5,
+    src: CategoryImg5,
+    title: "wrap",
+  },
+  {
+    id: 6,
+    src: CategoryImg6,
+    title: "pizza",
+  },
+  {
+    id: 7,
+    src: CategoryImg7,
+    title: "burger",
+  },
+  {
+    id: 8,
+    src: CategoryImg8,
+    title: "chicken",
+  },
+  {
+    id: 9,
+    src: CategoryImg9,
+    title: "kebab",
+  },
+  {
+    id: 10,
+    src: CategoryImg10,
+    title: "plov",
+  },
+  {
+    id: 11,
+    src: CategoryImg11,
+    title: "steak",
+  },
+  {
+    id: 12,
+    src: CategoryImg12,
+    title: "somsa",
+  },
+];
 export const locales: TLocale[] = ["uz", "en", "ru"];
-
-// export const socialData: ILink[] = [
-//   {
-//     icon: telegramIcon,
-//     link: "https://t.me/piyola_market",
-//     text: "Telegram"
-//   }, {
-//     icon: instagramIcon,
-//     link: "https://www.instagram.com/piyola_market",
-//     text: "Instagram"
-//   }, {
-//     icon: facebookIcon,
-//     link: "https://www.facebook.com",
-//     text: "Facebook"
-//   }, {
-//     icon: youTubeIcon,
-//     link: "https://www.youTube.com",
-//     text: "YouTube"
-//   }
-// ]
-
 export const localesData: ISelectData<TLocale>[] = [
   { value: "uz", label: "Uz", icon: "uz" },
   { value: "ru", label: "Ru", icon: "ru" },
@@ -37,165 +100,6 @@ export const loadingMockData: number[] = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
 ];
 
-// export const motionVariants = {
-//   initial: {opacity: 0, y: 25, scale: .95},
-//   animate: {opacity: 1, y: 0, scale: 1},
-// }
-
-// export const overlayVariants = {
-//   initial: {
-//     opacity: 0,
-//     display: "none",
-//     zIndex: -1,
-//   },
-//   animate: {
-//     opacity: 1,
-//     display: "flex",
-//     zIndex: 51,
-//   }
-// }
-
-// export const productStatusData: ISelectData<TProductType>[] = [
-//   {label: 'Barchasi', value: 'ALL'},
-//   {label: 'Yangi mahsulotlar', value: 'NEW'},
-//   {label: 'B/U mahsulotlar', value: 'OLD'},
-// ];
-
-// export const navLinks: INavLink[] = [
-//   {
-//     link: '/catalog',
-//     text: "Katalog",
-//     icon: {
-//       filled: catalogFilledIcon,
-//       outline: catalogIcon,
-//     }
-//   },
-//   {
-//     link: '/',
-//     text: "Asosiy",
-//     icon: {
-//       filled: homeFilledIcon,
-//       outline: homeIcon,
-//     }
-//   }, {
-//     link: '/liked',
-//     text: "Saqlangan",
-//     icon: {
-//       filled: heartFilledIcon,
-//       outline: heartIcon,
-//     }
-//   }
-// ]
-
-// export const additionalInfoData: IAdditionalInfo[] = [
-//   {
-//     title: "Mahsulot do'konda mavjud!",
-//     subtitle: "Sifat va mavjudlik kafolati",
-//     icon: doubleCheckIcon,
-//     content: `
-//        <h3>Bo'lib to'lash imkoniyatlari:</h3>
-//         <p>
-//           Siz mahsulotni 6, 12, 18 yoki 24 oylik bo'lib to'lash asosida xarid qilishingiz mumkin.
-//           Ushbu imkoniyat sizga mahsulotni qulay va oson usulda xarid qilish imkonini beradi.
-//         </p>
-//         <ul>
-//           <li>
-//             <strong>6 oylik bo'lib to'lash:</strong> Har oyda qulay miqdorda to'lov amalga oshiring
-//             va mahsulotdan hoziroq bahramand bo'ling.
-//           </li>
-//           <li>
-//             <strong>12 oylik bo'lib to'lash:</strong> Har oyda kichik miqdorda to'lov bilan katta
-//             xarajatlarni bo'lib-bo'lib qoplang.
-//           </li>
-//           <li>
-//             <strong>18 oylik bo'lib to'lash:</strong> Uzoq muddatli va qulay to'lov shartlari bilan
-//             mahsulotni hoziroq sotib oling.
-//           </li>
-//           <li>
-//             <strong>24 oylik bo'lib to'lash:</strong> Minimal to'lovlar bilan mahsulotni uzoq
-//             muddatga bo'lib to'lash imkoniyati.
-//           </li>
-//         </ul>
-//         <p>
-//           Bo'lib to'lash imkoniyati mahsulotni xarid qilishni yanada qulay va oson qiladi.
-//           Mahsulotni hoziroq sotib olib, to'lovlarni kelgusida amalga oshiring!
-//         </p>
-//     `
-//   }, {
-//     title: "Rasmiy kafolat",
-//     subtitle: "1 yil",
-//     icon: shieldIcon,
-//     content: `
-//       <p>Ushbu mahsulot rasmiy 1 yillik kafolat bilan ta'minlanadi.</p>
-//       <p>
-//         Mahsulotda har qanday nuqson yoki muammolar yuzaga kelganda, siz kafolat asosida bepul
-//         xizmat yoki almashtirish imkoniyatidan foydalanishingiz mumkin.
-//       </p>
-//       <h3>Kafolat shartlari:</h3>
-//       <ul>
-//         <li>
-//           <strong>Bepul ta'mirlash:</strong> Mahsulotda ishlab chiqarish nuqsonlari bo'lsa, bepul
-//           ta'mirlash xizmatlari taqdim etiladi.
-//         </li>
-//         <li>
-//           <strong>Mahsulotni almashtirish:</strong> Ta'mirlash imkoni bo'lmagan holatlarda
-//           mahsulotni yangi nusxasi bilan almashtirish imkoniyati mavjud.
-//         </li>
-//         <li>
-//           <strong>Kafolat shartlari:</strong> Kafolat faqat ishlab chiqarish nuqsonlariga nisbatan
-//           qo'llaniladi. Foydalanuvchi tomonidan noto'g'ri ishlatish natijasida yuzaga kelgan
-//           muammolar kafolat doirasiga kirmaydi.
-//         </li>
-//       </ul>
-//       <p>
-//         Kafolat shartlari haqida qo'shimcha ma'lumot olish uchun bizning mijozlarga xizmat
-//         ko'rsatish markazimizga murojaat qiling.
-//       </p>
-//     `
-//   }, {
-//     title: "Yetkazib berish xizmati",
-//     subtitle: "O'zbekiston bo'ylab bepul",
-//     icon: deliveryIcon,
-//     content: `
-//       <p>Ushbu mahsulot O'zbekiston bo'ylab bepul yetkazib beriladi.</p>
-//       <h3>Yetkazib berish haqida:</h3>
-//       <ul>
-//         <li>
-//           <strong>Bepul yetkazib berish:</strong> Sizga hech qanday qo'shimcha to'lovsiz
-//           mahsulotingizni manzilingizga yetkazib beramiz.
-//         </li>
-//         <li>
-//           <strong>Tezkor yetkazib berish:</strong> Buyurtmangizni qisqa vaqt ichida yetkazib
-//           berishni ta'minlaymiz.
-//         </li>
-//         <li>
-//           <strong>Xavfsiz yetkazib berish:</strong> Mahsulotingizni xavfsiz va zarar ko'rmagan
-//           holda yetkazib beramiz.
-//         </li>
-//       </ul>
-//       <p>
-//         Yetkazib berish xizmati haqida qo'shimcha ma'lumot olish uchun bizning mijozlarga xizmat
-//         ko'rsatish markazimizga murojaat qiling.
-//       </p>
-//     `
-//   }
-// ]
-
-// export const paymentMethods: StaticImageData[] = [
-//   anorBankIcon,
-//   payMeIcon,
-//   clickIcon,
-//   humoIcon,
-//   uzCardIcon,
-//   visaIcon
-// ]
-
-// export const paymentTerms: number[] = [6, 12]
-
-// export const providerIcons: Record<TProvider, StaticImageData> = {
-//   ALIF: alifLogoIcon,
-//   UZUM: uzumLogoIcon,
-// }
 export const radioData = [
   {label: "small", value: "extraFree", price: 'extraFree'},
   {label: "medium", value: "medium", price: '+1.500'},
@@ -212,6 +116,80 @@ export const bannerData: StaticImageData[] = [
   bannerImg,
   bannerImg2,
   bannerImg3,
+];
+export interface IProductCardItemsType {
+  id: number;
+  img: string | StaticImageData;
+  title: string;
+  price: string;
+  salePrice: string;
+  restaurantName: string;
+}
+export const productCardItems: IProductCardItemsType[] = [
+  {
+    id: 1,
+    img: cardImg1,
+    title: "biryani",
+    price: "15 000",
+    salePrice: "12 500",
+    restaurantName: "kebabHose",
+  },
+  {
+    id: 2,
+    img: cardImg2,
+    title: "shawarma",
+    price: "12 000",
+    salePrice: "9 500",
+    restaurantName: "asianHalal",
+  },
+  {
+    id: 3,
+    img: cardImg3,
+    title: "shashlik",
+    price: "8 000",
+    salePrice: "5 500",
+    restaurantName: "samarkandCafe",
+  },
+  {
+    id: 4,
+    img: cardImg4,
+    title: "mediterranean",
+    price: "18 000",
+    salePrice: "10 900",
+    restaurantName: "tashkentBurger",
+  },
+  {
+    id: 5,
+    img: cardImg5,
+    title: "chickenbiryani",
+    price: "12 5000",
+    salePrice: "10 500",
+    restaurantName: "cairoHalal",
+  },
+  {
+    id: 6,
+    img: cardImg6,
+    title: "satayset",
+    price: "15 000",
+    salePrice: "18 000",
+    restaurantName: "noodleHalal",
+  },
+  {
+    id: 7,
+    img: cardImg7,
+    title: "hummus",
+    price: "10 000",
+    salePrice: "7 500",
+    restaurantName: "cairoHalal",
+  },
+  {
+    id: 8,
+    img: cardImg8,
+    title: "hummusset",
+    price: "13 500",
+    salePrice: "18 000",
+    restaurantName: "asianHalal",
+  },
 ];
 
 // export const regions = [
