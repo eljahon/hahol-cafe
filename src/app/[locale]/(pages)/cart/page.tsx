@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Cart } from "./_component/card";
+import { Header } from "@/components";
 
 const CartPage = () => {
   return (
-    <div>CartPage</div>
-  )
-}
+    <div>
+      <Header />
+      <Cart />
+    </div>
+  );
+};
 
-export default CartPage
+export default CartPage;

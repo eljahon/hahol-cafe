@@ -47,5 +47,12 @@
   "delivery": "Delivery",
   "totla": "Total",
   "addCard": "Add",
-  "catgDetailDescription": "Real Turkish chicken burger from real Turkish Fast food"
+  "catgDetailDescription": "Real Turkish chicken burger from real Turkish Fast food",
+  "apply": "Apply",
+  "checkout": "Checkout",
+  "cart": "Cart",
+  "saved": "Saved",
+  "all": "All",
+  "storeCupon": "Store cupon",
+  "cuponApplyed": "coupon has been applied"
 }

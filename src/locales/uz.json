@@ -47,5 +47,12 @@
   "delivery": "Yetkazish",
   "totla": "Jami",
   "addCard": "Qo'shish",
-  "catgDetailDescription": "Haqiqiy turk tovuqli burgeri haqiqiy turk tez taomlari"
+  "catgDetailDescription": "Haqiqiy turk tovuqli burgeri haqiqiy turk tez taomlari",
+  "apply": "Qo'shish",
+  "checkout": "To'lov",
+  "cart": "Savatcha",
+  "saved": "Saqlangan",
+  "all": "Barcha",
+  "storeCupon": "Magazin kupon",
+  "cuponApplyed": "kupon qo'llanildi"
 }

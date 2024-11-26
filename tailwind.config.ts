@@ -47,6 +47,8 @@ module.exports = {
         ClrDFDD: "#DFDDFF",
         Clr5959: "#595959",
         Clr4a23: "#4A235C",
+        Clr3C3A: "#3C3A3A",
+        ClrFF00: "#FF0000",
       },
 
       boxShadow: {
@@ -56,6 +58,7 @@ module.exports = {
         searchInputBoxShadow:
           "-7px -7px 20px 0px rgba(255, 255, 255, 0.90) inset, 7px 7px 20px 0px rgba(135, 98, 98, 0.40) inset",
         cardShadow: "0px 4.632px 4.632px 0px rgba(0, 0, 0, 0.25)",
+        cardOrderShadow: "0px -2.352px 4.703px 0px rgba(0, 0, 0, 0.25)",
       },
       borderRadius: {
         bottomButtonBorderRadius: "10px 10px 0px 0px",
@@ -64,7 +67,7 @@ module.exports = {
       },
 
       gridTemplateColumns: {
-        "gridColumnsCardBox": "repeat(auto-fit, minmax(160px, 1fr))",
+        gridColumnsCardBox: "repeat(auto-fit, minmax(160px, 1fr))",
       },
     },
   },
