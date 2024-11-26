@@ -41,7 +41,7 @@ export const SliderCurrentCategory = ({ currentId }: { currentId: string }) => {
   };
   return (
     <div>
-      <Slider slickGoTo={currnet} {...settings}>
+      <Slider {...settings}>
         {categoryImages.map((item) => (
           <div key={item.id}>
             {currentCategory?.id === item.id ? (
