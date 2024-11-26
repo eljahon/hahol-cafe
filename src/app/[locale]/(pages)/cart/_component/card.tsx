@@ -4,7 +4,7 @@ import { CardHeartIcon } from "@/assets/icons/card-heart-icon";
 import { CardLocationIcon } from "@/assets/icons/card-location-icon";
 import { MinusCalcIcon } from "@/assets/icons/minus-calc-icon";
 import { PlusCalcIcon } from "@/assets/icons/plus-calc-icon";
-import { Card, CardBody, Checkbox, ScrollShadow } from "@nextui-org/react";
+import { Card, CardBody, Checkbox, cn, ScrollShadow } from "@nextui-org/react";
 import React, { useState } from "react";
 import { cardImg1, cardImg2, cardImg3 } from "@/constants";
 import Image, { StaticImageData } from "next/image";
@@ -13,6 +13,7 @@ import { ChervonCardOrderLeftIcon } from "@/assets/icons/chervon-card-order-left
 import { Link } from "@/hooks/locale";
 import { useLocale } from "next-intl";
 import { TLocale } from "@/types";
+import { CencelCardIcon } from "@/assets/icons/cencel-card-icon";
 
 interface FoodItem {
   id: string;
@@ -188,6 +189,7 @@ export const Cart: React.FC = () => {
             <CardBody className="p-4">
               <div className="mb-4 flex items-center gap-2">
                 <Checkbox
+                  classNames={{ wrapper: cn("border-2 border-Clr4a23 rounded-full") }}
                   isSelected={isAllSelected}
                   onValueChange={handleSelectAll}
                 />
@@ -203,6 +205,7 @@ export const Cart: React.FC = () => {
                     className="flex items-center gap-3 border-b border-white pb-4"
                   >
                     <Checkbox
+                      classNames={{ wrapper: cn("border-2 border-Clr4a23 rounded-full") }}
                       isSelected={selectedItems.has(item.id)}
                       onValueChange={(checked) =>
                         handleItemSelect(item.id, checked)
@@ -226,7 +229,7 @@ export const Cart: React.FC = () => {
                           </p>
                         </div>
                         <button className="text-gray-400 hover:text-gray-600">
-                          X
+                          <CencelCardIcon />
                         </button>
                       </div>
 
@@ -274,7 +277,9 @@ export const Cart: React.FC = () => {
         <div className="shadow-cardOrderShadow fixed bottom-0 left-0 right-0 rounded-calculateOrderTopRadius bg-white p-4">
           <div className="flex items-center justify-between space-y-2">
             <div>
-              <Checkbox>{t("all")}</Checkbox>
+              <Checkbox classNames={{ wrapper: cn("border-2 border-Clr4a23 rounded-full") }}>
+                {t("all")}
+              </Checkbox>
             </div>
             <div>
               <p className="text-Clr3C3A text-end font-overpass text-[30px]">
@@ -289,7 +294,7 @@ export const Cart: React.FC = () => {
             {t("checkout")}
           </button>
 
-          <span className="shadow-cardOrderShadow absolute top-[10px] left-[120px] block h-[6px] w-[146px] rounded-[6px] bg-Clr4002"></span>
+          <span className="shadow-cardOrderShadow absolute left-[120px] top-[10px] block h-[6px] w-[146px] rounded-[6px] bg-Clr4002"></span>
         </div>
       </div>
     </ScrollShadow>
