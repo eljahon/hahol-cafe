@@ -45,17 +45,15 @@ export default function CompanyDetailPage() {
     router.push("/");
   };  
 
-  const handleVisibilityChange = (overflow: ScrollShadowVisibility) => {
-    console.log(overflow, "overflow =>>>");
-  };
+
 
 
   return (
     <div className="bg-ClrEAE9">
       <div className="relative mx-auto max-w-md xsm:max-w-full">
-      <ScrollShadow hideScrollBar className="h-[calc(100vh)]" onVisibilityChange={handleVisibilityChange}>
+      <ScrollShadow hideScrollBar className="h-[calc(100vh)]">
         <div className="fixed left-0 right-0 top-0 z-30 flex items-center justify-between bg-gradient-to-b from-black to-transparent px-4 py-3">
-          <Link href="/"  key={locale} locale={locale}>
+          <Link href="/" key={locale}>
             <ChevronLeftIcon />
           </Link>
           <button>

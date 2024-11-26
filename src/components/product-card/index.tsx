@@ -7,7 +7,7 @@ import { StarIcon } from "@/assets/icons/star-icon";
 import { CardLocationIcon } from "@/assets/icons/card-location-icon";
 import { AddCartIcon } from "@/assets/icons/add-cart-icon";
 import { Link } from "@/hooks/locale";
-import { TLocale } from "@/types";
+import type { TLocale } from "@/types";
 
 export const ProductCard: FC<IProductCardItemsType> = (props) => {
   const { img, title, price, salePrice, restaurantName } = props;
