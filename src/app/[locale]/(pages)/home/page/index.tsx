@@ -5,7 +5,6 @@ import { useTranslations, useLocale } from "next-intl";
 import { BannerSlider } from "../component/slider";
 import { CategorySlider } from "../component";
 import { Header, NavigationButtons, ProductCard } from "@/components";
-import { StaticImageData } from "next/image";
 import { ScrollShadow } from "@nextui-org/react";
 import { Link } from "@/hooks/locale";
 import { productCardItems } from "@/constants/data";

@@ -12,7 +12,6 @@ import {
   ScrollShadow,
   cn
 } from "@nextui-org/react";
-import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 
 import { SliderImage } from "./_component/slider-image";
@@ -25,7 +24,6 @@ import { Link } from "@/hooks/locale";
 
 export default function ProductDetailPage() {
   const t = useTranslations();
-  const router = useRouter();
   const [count, setCount] = React.useState(1);
   const [open, setOpen] = React.useState(true);
   const locale = useLocale();
@@ -37,10 +35,6 @@ export default function ProductDetailPage() {
     if (count > 1) {
       setCount(count - 1);
     }
-  };
-
-  const backToHome = () => {
-    router.push("/");
   };
   return (
     <div className="bg-ClrEAE9">

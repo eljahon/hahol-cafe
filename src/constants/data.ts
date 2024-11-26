@@ -93,7 +93,7 @@ export const locales: TLocale[] = ["uz", "en", "ru"];
 export const localesData: ISelectData<TLocale>[] = [
   { value: "uz", label: "Uz", icon: "uz" },
   { value: "ru", label: "Ru", icon: "ru" },
-  { value: "en", label: "En" , icon: "gb"},
+  { value: "en", label: "En", icon: "gb" },
 ];
 
 export const loadingMockData: number[] = [
@@ -101,17 +101,17 @@ export const loadingMockData: number[] = [
 ];
 
 export const radioData = [
-  {label: "small", value: "extraFree", price: 'extraFree'},
-  {label: "medium", value: "medium", price: '+1.500'},
-  {label: "large", value: "large", price: '+2.500'},
-  {label: "extraLarge", value: "extraLarge", price: '+3.500'},
-]
+  { label: "small", value: "extraFree", price: "extraFree" },
+  { label: "medium", value: "medium", price: "+1.500" },
+  { label: "large", value: "large", price: "+2.500" },
+  { label: "extraLarge", value: "extraLarge", price: "+3.500" },
+];
 export const checkboxData = [
-  {label: "original", value: "original", price: 'extraFree'},
-  {label: "onion", value: "onion", price: '+1.500'},
-  {label: "olives", value: "olives", price: '+2.500'},
-  {label: "souse", value: "souse", price: '+3.500'},
-]
+  { label: "orginal", value: "original", price: "extraFree" },
+  { label: "onion", value: "onion", price: "+1.500" },
+  { label: "olives", value: "olives", price: "+2.500" },
+  { label: "souse", value: "souse", price: "+3.500" },
+];
 export const bannerData: StaticImageData[] = [
   bannerImg,
   bannerImg2,
@@ -124,6 +124,14 @@ export interface IProductCardItemsType {
   price: string;
   salePrice: string;
   restaurantName: string;
+}
+export interface ICatgDetailCardItemsType {
+  id: number;
+  img: string | StaticImageData;
+  title: string;
+  price: string;
+  salePrice: string;
+  description: string;
 }
 export const productCardItems: IProductCardItemsType[] = [
   {
@@ -189,6 +197,73 @@ export const productCardItems: IProductCardItemsType[] = [
     price: "13 500",
     salePrice: "18 000",
     restaurantName: "asianHalal",
+  },
+];
+
+export const catgDetailCardItems: ICatgDetailCardItemsType[] = [
+  {
+    id: 1,
+    img: cardImg1,
+    title: "biryani",
+    price: "15 000",
+    salePrice: "12 500",
+    description: "catgDetailDescription",
+  },
+  {
+    id: 2,
+    img: cardImg2,
+    title: "shawarma",
+    price: "12 000",
+    salePrice: "9 500",
+    description: "catgDetailDescription",
+  },
+  {
+    id: 3,
+    img: cardImg3,
+    title: "shashlik",
+    price: "8 000",
+    salePrice: "5 500",
+    description: "catgDetailDescription",
+  },
+  {
+    id: 4,
+    img: cardImg4,
+    title: "mediterranean",
+    price: "18 000",
+    salePrice: "10 900",
+    description: "catgDetailDescription",
+  },
+  {
+    id: 5,
+    img: cardImg5,
+    title: "chickenbiryani",
+    price: "12 5000",
+    salePrice: "10 500",
+    description: "catgDetailDescription",
+  },
+  {
+    id: 6,
+    img: cardImg6,
+    title: "satayset",
+    price: "15 000",
+    salePrice: "18 000",
+    description: "catgDetailDescription",
+  },
+  {
+    id: 7,
+    img: cardImg7,
+    title: "hummus",
+    price: "10 000",
+    salePrice: "7 500",
+    description: "catgDetailDescription",
+  },
+  {
+    id: 8,
+    img: cardImg8,
+    title: "hummusset",
+    price: "13 500",
+    salePrice: "18 000",
+    description: "catgDetailDescription",
   },
 ];
 

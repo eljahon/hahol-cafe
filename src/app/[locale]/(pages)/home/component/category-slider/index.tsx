@@ -12,7 +12,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 /// Import Image's
 
-
 export const CategorySlider: FC = () => {
   const settings = {
     slidesToShow: 3,
@@ -27,15 +26,19 @@ export const CategorySlider: FC = () => {
   //   // if (categorySlider) {
   //     window.addEventListener("scroll", () => {
   //       console.log(window.scrollY, "window.scrollY =>>>");
-      
+
   //   });
   // }, []);
   return (
-    <div >
+    <div>
       <Slider {...settings}>
         {categoryImages.map((item) => (
           <div key={item.id}>
-            <div  className={`relative my-5 bg-white border-[1px] border-Clr611F flex flex-col items-center justify-between py-1 w-[110px] xsm:w-[120px] mx-auto h-[100px] shadow-bannerItemBoxShadow rounded-[20px]`}>
+            <Link
+              href={`/categoryDetail/${item.id}`}
+              locale={locale}
+              className={`relative mx-auto my-5 flex h-[100px] w-[110px] flex-col items-center justify-between rounded-[20px] border-[1px] border-Clr611F bg-white py-1 shadow-bannerItemBoxShadow xsm:w-[120px]`}
+            >
               <Image
                 width={80}
                 src={item.src}
@@ -43,8 +46,8 @@ export const CategorySlider: FC = () => {
                 className="object-contain"
                 priority={item.id === 0}
               />
-              <p className="font-poppins font-normal ">{t(item.title)}</p>
-            </div>
+              <p className="font-poppins font-normal">{t(item.title)}</p>
+            </Link>
           </div>
         ))}
       </Slider>
