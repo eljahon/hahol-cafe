@@ -26,6 +26,12 @@ import CategoryImg9 from "@/assets/imgs/category-img-9.png";
 import CategoryImg10 from "@/assets/imgs/category-img-10.png";
 import CategoryImg11 from "@/assets/imgs/category-img-11.png";
 import CategoryImg12 from "@/assets/imgs/category-img-12.png";
+import { restaurantBgImg1 } from "@/constants";
+import { restaurantBgImg2 } from "@/constants";
+import { restaurantBgImg3 } from "@/constants";
+import { restourantAvatarImg1 } from "@/constants";
+import { restourantAvatarImg2 } from "@/constants";
+import { restourantAvatarImg3 } from "@/constants";
 
 export const categoryImages = [
   {
@@ -264,6 +270,45 @@ export const catgDetailCardItems: ICatgDetailCardItemsType[] = [
     price: "13 500",
     salePrice: "18 000",
     description: "catgDetailDescription",
+  },
+];
+
+export const restaurantsData = [
+  {
+    id: 1,
+    restourantName: "Asian Halal Cafe",
+    image: restaurantBgImg1,
+    rating: 5.0,
+    reviews: 1200,
+    distance: "2.5 km",
+    deliveryTime: "35-40 mins",
+    status: "Open ~ 10PM",
+    avatar: restourantAvatarImg1,
+    review: 1000,
+  },
+  {
+    id: 2,
+    restourantName: "Samarkand Cafe",
+    image: restaurantBgImg2,
+    rating: 4.8,
+    reviews: 800,
+    distance: "3.0 km",
+    deliveryTime: "30-35 mins",
+    status: "Open ~ 11PM",
+    avatar: restourantAvatarImg2,
+    review: 2500,
+  },
+  {
+    id: 3,
+    restourantName: "Tashkent Burger",
+    image: restaurantBgImg3,
+    rating: 4.8,
+    reviews: 800,
+    distance: "3.0 km",
+    deliveryTime: "30-35 mins",
+    status: "Open ~ 9PM",
+    avatar: restourantAvatarImg3,
+    review: 6100,
   },
 ];
 

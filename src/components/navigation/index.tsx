@@ -15,7 +15,8 @@ import { CartActiveIcon } from "@/assets/icons/cart-active-icon";
 import { ProfileActiveIcon } from "@/assets/icons/profile-active-icon";
 import { LocationActiveIcon } from "@/assets/icons/location-active-icon";
 import { useLocale } from "next-intl";
-import type { TLocale } from "@/types"; // Assuming TLocale is defined in this file
+import type { TLocale } from "@/types";
+import path from "path";
 
 export const NavigationButtons: FC = () => {
   const pathname = usePathname();
@@ -59,8 +60,8 @@ export const NavigationButtons: FC = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 w-full right-0 bg-white shadow-bottomButtonBoxShadow rounded-bottomButtonBorderRadius">
-      <div className="flex justify-around items-center h-13">
+    <nav className="fixed bottom-0 left-0 right-0 w-full rounded-bottomButtonBorderRadius bg-white shadow-bottomButtonBoxShadow">
+      <div className="h-13 flex items-center justify-around">
         {links.map(({ href, label, icon: Icon, active }, index) => {
           const isActive = active.includes(pathname);
           return (
@@ -68,24 +69,27 @@ export const NavigationButtons: FC = () => {
               key={index}
               href={href}
               locale={locale}
-              className={`flex relative flex-col items-center justify-center w-full h-full space-y-1 transition-all duration-300 ease-in-out 
-                ${
-                  isActive
-                    ? "text-primary"
-                    : "text-gray-500 hover:text-gray-900"
-                }`}
+              className={`relative flex h-full w-full flex-col items-center justify-center space-y-1 transition-all duration-300 ease-in-out ${
+                isActive ? "text-primary" : "text-gray-500 hover:text-gray-900"
+              }`}
             >
               <span
                 className={`${
                   isActive &&
-                  "flex items-center justify-center shadow-lg -translate-y-[23px] border-2 border-transparent w-[50px] rounded-full py-2 bg-white"
+                  "flex w-[50px] -translate-y-[23px] items-center justify-center rounded-full border-2 border-transparent bg-white py-2 shadow-lg"
                 }`}
               >
                 <Icon />
               </span>
-              <span className="text-xs pb-2 absolute -bottom-[6px]">
+              <span className="absolute -bottom-[6px] pb-2 text-xs">
                 {isActive && label}
               </span>
+
+              {label === "Cart" && (
+                <span className="absolute -top-2.5 right-4 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[12px] text-white shadow-bannerItemBoxShadow">
+                  3
+                </span>
+              )}
             </Link>
           );
         })}

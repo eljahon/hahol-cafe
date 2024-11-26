@@ -6,9 +6,9 @@ import { BannerSlider } from "../component/slider";
 import { CategorySlider } from "../component";
 import { Header, NavigationButtons, ProductCard } from "@/components";
 import { ScrollShadow } from "@nextui-org/react";
-import { Link } from "@/hooks/locale";
-import { productCardItems } from "@/constants/data";
+import { productCardItems, restaurantsData } from "@/constants/data";
 import { TLocale } from "@/types";
+import { RestaurantCard } from "../component/restourant-card/restaurant-card";
 
 export const HomePage = () => {
   const t = useTranslations();
@@ -35,24 +35,28 @@ export const HomePage = () => {
           <CategorySlider />
         </div>
         <div className="container">
-          <div>
-            <h2 className="py-[20px] font-openSans text-[20px] font-semibold text-Clr5204">
-              {t("hotProduct")}
-            </h2>
-            <div className="grid grid-cols-gridColumnsCardBox justify-items-center gap-2 xs:gap-4">
-              {productCardItems.map((item) => (
-                <ProductCard key={item.id} {...item} />
-              ))}
-            </div>
-            <h2 className="mt-4 py-[20px] font-openSans text-[20px] font-semibold text-Clr5204">
-              {t("onlyForYou")}
-            </h2>
-            <div className="grid grid-cols-gridColumnsCardBox justify-items-center gap-2 xs:gap-4">
-              {productCardItems.map((item) => (
-                <ProductCard key={item.id} {...item} />
-              ))}
-            </div>
+          <h2 className="py-[20px] font-openSans text-[20px] font-semibold text-Clr5204">
+            {t("hotProduct")}
+          </h2>
+          <div className="grid grid-cols-gridColumnsCardBox justify-items-center gap-2 xs:gap-4">
+            {productCardItems.map((item) => (
+              <ProductCard key={item.id} {...item} />
+            ))}
           </div>
+          <h2 className="mt-4 py-[20px] font-openSans text-[20px] font-semibold text-Clr5204">
+            {t("onlyForYou")}
+          </h2>
+          <div className="grid grid-cols-gridColumnsCardBox justify-items-center gap-2 xs:gap-4">
+            {productCardItems.map((item) => (
+              <ProductCard key={item.id} {...item} />
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 className="px-4 text-Clr5204 font-semibold text-[20px] pb-4 pt-[80px]">{t("restaurants")}</h3>
+          {restaurantsData.map((item) => (
+            <RestaurantCard key={item.id} {...item} />
+          ))}
         </div>
       </ScrollShadow>
 

@@ -8,7 +8,7 @@
   "wrap": "Лаваш",
   "arab": "Arab",
   "turksih": "Туркменский",
-  "middleEast": "Средний Восток",
+  "middleEast": "Средний",
   "kebab": "Кабыб",
   "plov": "Ош",
   "steak": "Steak",
@@ -17,7 +17,7 @@
   "biryani": "Быран",
   "shawarma": "Шаурма",
   "shashlik": "Шашлык",
-  "mediterranean": "Средний Восток пицца",
+  "mediterranean": "Средний пицца",
   "chickenbiryani": "Курица Быран",
   "satayset": "Сатай набор",
   "hummus": "Хуммос",
@@ -54,5 +54,6 @@
   "saved": "Сохранено",
   "all": "Все",
   "storeCupon": "Купон магазина",
-  "cuponApplyed": "купон был применен"
+  "cuponApplyed": "купон был применен",
+  "restaurants": "Рестораны рядом с вами"
 }

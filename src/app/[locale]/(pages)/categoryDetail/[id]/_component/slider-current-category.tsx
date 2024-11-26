@@ -21,7 +21,6 @@ export const SliderCurrentCategory = ({ currentId }: { currentId: string }) => {
   const settings = {
     slidesToShow: 3,
     slidesToScroll: 1,
-    // centerPadding: "30px",
     infinite: false,
     speed: 500,
   };
@@ -36,9 +35,13 @@ export const SliderCurrentCategory = ({ currentId }: { currentId: string }) => {
 
   //   });
   // }, []);
+
+  const currnet = (arg: any) => {
+    console.log(arg, "arg =>>>");
+  };
   return (
     <div>
-      <Slider {...settings}>
+      <Slider slickGoTo={currnet} {...settings}>
         {categoryImages.map((item) => (
           <div key={item.id}>
             {currentCategory?.id === item.id ? (

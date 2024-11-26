@@ -49,6 +49,7 @@ module.exports = {
         Clr4a23: "#4A235C",
         Clr3C3A: "#3C3A3A",
         ClrFF00: "#FF0000",
+        ClrFE01: "#FE0101",
       },
 
       boxShadow: {
