@@ -233,11 +233,11 @@ export const Cart: React.FC = () => {
                         </button>
                       </div>
 
-                      <div className="flex items-center justify-between">
-                        <p className="mt-1 font-semibold">
+                      <div className="flex items-center justify-between gap-x-2">
+                        <p className="mt-1 font-semibold text-Clr5959 text-[14px]">
                           {item.price.toLocaleString()} won
                         </p>
-                        <div className="mt-2 flex items-center gap-2">
+                        <div className="mt-2 flex items-center">
                           <button
                             disabled={item.quantity === 1}
                             onClick={() => updateQuantity(item.id, false)}
