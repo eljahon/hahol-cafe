@@ -6,18 +6,19 @@ import { ICatgDetailCardItemsType } from "@/constants/data";
 import { useLocale, useTranslations } from "next-intl";
 import { AddCartIcon } from "@/assets/icons/add-cart-icon";
 import { CardCatgDetailHeartIcon } from "@/assets/icons/card-catg-detail-heart-icon";
+import { TLocale } from "@/types";
 
 export const CatgDetailProductCard: React.FC<ICatgDetailCardItemsType> = (
   props,
 ) => {
-  const locale = useLocale();
+  const locale = useLocale() as TLocale
   const t = useTranslations();
   const { title, img, salePrice, price, description } = props;
   return (
     <Link
       href={`/productDetail/${title}`}
       locale={locale}
-      className="relative h-[270px] w-[159px] rounded-[12px] bg-slate-500 xs:h-[308px] xs:w-full"
+      className="relative h-[270px] w-[159px] rounded-[12px] shadow-cardShadow xs:h-[308px] xs:w-full"
     >
       <Image
         className="rounded-t-[12px] xs:h-[190px] xs:w-full"

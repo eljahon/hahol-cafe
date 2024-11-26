@@ -9,6 +9,7 @@ import { useLocale } from "next-intl";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { TLocale } from "@/types";
 
 /// Import Image's
 
@@ -20,7 +21,7 @@ export const CategorySlider: FC = () => {
   };
 
   const t = useTranslations();
-  const { locale } = useLocale();
+  const locale = useLocale() as TLocale;
   // useEffect(() => {
   //   const categorySlider = document.getElementById("category-slider");
   //   // if (categorySlider) {

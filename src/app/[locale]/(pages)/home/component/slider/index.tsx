@@ -10,10 +10,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useLocale } from "next-intl";
 import { Link } from "@/hooks/locale";
+import { TLocale } from "@/types";
 const bannerImages = [bannerImg1, bannerImg2, bannerImg3];
 
 export const BannerSlider: FC = () => {
-  const locale = useLocale();
+  const locale = useLocale() as TLocale;
   const settings = {
     className: "center",
     centerMode: true,

@@ -9,6 +9,7 @@ import { useLocale } from "next-intl";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { TLocale } from "@/types";
 
 /// Import Image's
 
@@ -18,9 +19,7 @@ export const SliderCurrentCategory = ({ currentId }: { currentId: string }) => {
   );
 
   const settings = {
-    className: "center",
-    centerMode: true,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     // centerPadding: "30px",
     infinite: false,
@@ -28,7 +27,7 @@ export const SliderCurrentCategory = ({ currentId }: { currentId: string }) => {
   };
 
   const t = useTranslations();
-  const { locale } = useLocale();
+  const locale = useLocale() as TLocale;
   // useEffect(() => {
   //   const categorySlider = document.getElementById("category-slider");
   //   // if (categorySlider) {
@@ -79,22 +78,3 @@ export const SliderCurrentCategory = ({ currentId }: { currentId: string }) => {
     </div>
   );
 };
-
-/*
-
- <Link
-              href={`/categoryDetail/${item.id}`}
-              locale={locale}
-              className={`relative mx-auto my-5 flex h-[100px] w-[110px] flex-col items-center justify-between rounded-[20px] border-[1px] border-Clr611F bg-white py-1 shadow-bannerItemBoxShadow xsm:w-[120px]`}
-            >
-              <Image
-                width={80}
-                src={item.src}
-                alt={`Banner ${item.id + 1}`}
-                className="object-contain"
-                priority={item.id === 0}
-              />
-              <p className="font-poppins font-normal">{t(item.title)}</p>
-            </Link>
-
-*/

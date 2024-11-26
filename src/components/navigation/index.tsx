@@ -15,9 +15,11 @@ import { CartActiveIcon } from "@/assets/icons/cart-active-icon";
 import { ProfileActiveIcon } from "@/assets/icons/profile-active-icon";
 import { LocationActiveIcon } from "@/assets/icons/location-active-icon";
 import { useLocale } from "next-intl";
+import type { TLocale } from "@/types"; // Assuming TLocale is defined in this file
+
 export const NavigationButtons: FC = () => {
   const pathname = usePathname();
-  const locale = useLocale();
+  const locale = useLocale() as TLocale;
   useEffect(() => {
     console.log(locale, pathname, "locale =>>>");
   }, [locale, pathname]);

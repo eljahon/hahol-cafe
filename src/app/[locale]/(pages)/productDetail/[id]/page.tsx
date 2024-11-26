@@ -21,12 +21,13 @@ import { MinusCalcIcon } from "@/assets/icons/minus-calc-icon";
 import { AddBasketIcon } from "@/assets/icons/add-basket-icon";
 import { checkboxData, radioData } from "@/constants/data";
 import { Link } from "@/hooks/locale";
+import { TLocale } from "@/types";
 
 export default function ProductDetailPage() {
   const t = useTranslations();
   const [count, setCount] = React.useState(1);
   const [open, setOpen] = React.useState(true);
-  const locale = useLocale();
+  const locale = useLocale() as TLocale;
   const IncrementCalc = () => {
     setCount(count + 1);
   };

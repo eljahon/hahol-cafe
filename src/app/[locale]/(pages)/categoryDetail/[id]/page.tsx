@@ -14,9 +14,10 @@ import { SliderCurrentCategory } from "./_component/slider-current-category";
 import { catgDetailCardItems } from "@/constants/data";
 import { CatgDetailProductCard } from "./_component/catg-detail-product-card";
 import { ScrollShadow } from "@nextui-org/react";
+import { TLocale } from "@/types";
 
 const CategoryDetailPage = ({ params }: { params: { id: string } }) => {
-  const locale = useLocale();
+  const locale = useLocale() as TLocale;
   const t = useTranslations();
   const categoryId = params.id;
 
@@ -77,11 +78,9 @@ const CategoryDetailPage = ({ params }: { params: { id: string } }) => {
 
         <SliderCurrentCategory currentId={categoryId} />
 
-        <div className="grid container grid-cols-gridColumnsCardBox justify-items-center gap-2 xs:gap-4">
+        <div className="container grid grid-cols-gridColumnsCardBox justify-items-center gap-2 xs:gap-4">
           {catgDetailCardItems.map((item) => (
-            <div key={item.id}>
-              <CatgDetailProductCard key={item.id} {...item} />
-            </div>
+            <CatgDetailProductCard key={item.id} {...item} />
           ))}
         </div>
       </ScrollShadow>
